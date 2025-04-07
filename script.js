@@ -17,7 +17,7 @@ function confirmUnderstanding() {
   const description = document.getElementById("descriptionBox").value.trim();
   const tradeUrl = document.getElementById("tradeUrl").value.trim();
 
-  fetch("https://steam-appeal-bot-1.onrender.com/api/submit-appeal", {
+  fetch("https://project-s-qypl.onrender.com", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
