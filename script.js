@@ -17,16 +17,16 @@ function confirmUnderstanding() {
   const description = document.getElementById("descriptionBox").value.trim();
   const tradeUrl = document.getElementById("tradeUrl").value.trim();
 
-  fetch("https://project-s-qypl.onrender.com", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      description,
-      tradeUrl
-    })
+  fetch("https://project-s-qypl.onrender.com/api/submit-appeal", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    description: "test desc",
+    tradeUrl: "https://steamcommunity.com/tradeoffer/new/?partner=123&token=abc"
   })
+})
   .then(res => res.json())
   .then(data => {
     if (data.success) {
