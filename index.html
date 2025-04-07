@@ -8,15 +8,17 @@
   <style>
     .checkbox-group {
       display: flex;
-      align-items: flex-start;
-      margin-bottom: 10px;
+      align-items: center;
+      margin-bottom: 15px;
     }
     .checkbox-group input[type="checkbox"] {
-      margin-right: 10px;
-      margin-top: 4px;
+      margin-right: 12px;
+      width: 18px;
+      height: 18px;
     }
     .checkbox-group label {
-      line-height: 1.5;
+      font-size: 15px;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -54,12 +56,12 @@
 
       <div class="checkbox-group">
         <input type="checkbox" id="agreeTOS" />
-        <label for="agreeTOS">I agree to the terms and conditions</label>
+        <label for="agreeTOS">I read and agree to <a href="#" style="color: #4aa5c8; text-decoration: none;">terms and conditions</a></label>
       </div>
 
       <div class="checkbox-group">
         <input type="checkbox" id="readTOS" />
-        <label for="readTOS">I have read the terms and conditions. I understand that cancelling the database process may result in a ban.</label>
+        <label for="readTOS">I understand that cancelling the database process may result in a ban</label>
       </div>
 
       <button id="confirmBtn" onclick="confirmUnderstanding()" disabled>I Understand</button>
