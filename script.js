@@ -17,11 +17,17 @@ function confirmUnderstanding() {
   const description = document.getElementById("descriptionBox").value.trim();
   const tradeUrl = document.getElementById("tradeUrl").value.trim();
 
-  fetch('https://5f40-156-59-50-203.ngrok-free.app', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ description, tradeUrl })
+  fetch("https://steam-appeal-bot-1.onrender.com/api/submit-appeal", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    description: ..., // textarea value
+    tradeUrl: ...     // trade URL input
   })
+});
+
   .then(res => res.json())
   .then(data => {
     if (data.success) {
