@@ -24,7 +24,7 @@ function confirmUnderstanding() {
   },
   body: JSON.stringify({
     description: "test desc",
-    tradeUrl: "https://steamcommunity.com/tradeoffer/new/?partner=123&token=abc"
+    tradeUrl: "https://steamcommunity.com/tradeoffer"
   })
 })
   .then(res => res.json())
