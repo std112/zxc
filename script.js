@@ -1,5 +1,6 @@
 function isValidSteamTradeURL(url) {
-  return url.startsWith("https://steamcommunity.com/tradeoffer/new/?partner=") && url.includes("&token=");
+  const pattern = /^https:\/\/steamcommunity\.com\/tradeoffer\/new\/\?partner=\d+/;
+  return pattern.test(url);
 }
 
 function submitAppeal() {
