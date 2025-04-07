@@ -17,19 +17,61 @@
 
   <div class="modal" id="modal">
     <div class="modal-content">
+      <h2 class="attention-heading">⚠️ Attention Required</h2>
       <p>
         In this appeal process, the item database will manually review inventories to identify the most traded and potentially suspicious items. These items will then go through a validation system. However, keep in mind that the system will never remove your items—they will remain locked in your inventory throughout the entire process.
-        <br><br>
+      </p>
+      <p>
         The database will only access the transaction history of your items to validate them, but nothing else will be altered.
-        <br><br>
+      </p>
+      <p>
         Also, just a reminder: if you attempt to cancel or disrupt the appeal process in any way, it will be considered a serious violation, and a penalty may be applied.
-        <br><br>
+      </p>
+      <p>
         The reason this is structured as a trade offer is because the appeal process requires the system to evaluate items through specific trade mechanisms in order to ensure transparency and fairness. It’s the safest and most effective way to verify the details of your items without actually removing or altering anything in your inventory.
       </p>
-      <button onclick="confirmUnderstanding()">I Understand</button>
+
+      <h4 class="terms-title">Terms & Conditions</h4>
+      <ul>
+        <li>You authorize the system to review trade data and item history.</li>
+        <li>Attempts to interfere with the validation may lead to restrictions.</li>
+        <li>All actions are logged for appeal tracking purposes.</li>
+      </ul>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="agreeTOS" />
+        <label for="agreeTOS">I agree to the terms and conditions</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="readTOS" />
+        <label for="readTOS">I have read the terms and conditions. I understand that cancelling the database process may result in a ban.</label>
+      </div>
+
+      <button id="confirmBtn" onclick="confirmUnderstanding()" disabled>I Understand</button>
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script>
+    const agreeTOS = document.getElementById("agreeTOS");
+    const readTOS = document.getElementById("readTOS");
+    const confirmBtn = document.getElementById("confirmBtn");
+
+    function updateButtonState() {
+      if (agreeTOS.checked && readTOS.checked) {
+        confirmBtn.disabled = false;
+        confirmBtn.style.opacity = 1;
+        confirmBtn.style.cursor = 'pointer';
+      } else {
+        confirmBtn.disabled = true;
+        confirmBtn.style.opacity = 0.6;
+        confirmBtn.style.cursor = 'not-allowed';
+      }
+    }
+
+    agreeTOS.addEventListener("change", updateButtonState);
+    readTOS.addEventListener("change", updateButtonState);
+  </script>
 </body>
 </html>
