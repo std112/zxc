@@ -95,15 +95,22 @@ button:hover {
     max-width: 100%;
   }
 
+/* Importing the Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Style for the clickable text link */
 .trade-url-link {
-  color: #FFC82C;
+  font-family: 'Roboto', sans-serif; /* Applying Roboto font */
+  color: yellow; /* Setting text color to yellow */
   text-decoration: none;
-  font-weight: "Roboto",sans-serif;
+  font-weight: 500; /* Medium font weight */
   cursor: pointer;
+  font-size: 14px; /* Smaller font size */
 }
 
 .trade-url-link:hover {
   text-decoration: underline;
 }
+
 
 }
