@@ -94,4 +94,16 @@ button:hover {
   .modal-content {
     max-width: 100%;
   }
+
+.trade-url-link {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.trade-url-link:hover {
+  text-decoration: underline;
+}
+
 }
