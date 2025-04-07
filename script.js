@@ -23,11 +23,10 @@ function confirmUnderstanding() {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-    description: ..., // textarea value
-    tradeUrl: ...     // trade URL input
+    description: ..., // your description value
+    tradeUrl: ...     // the trade link
   })
 });
-
   .then(res => res.json())
   .then(data => {
     if (data.success) {
