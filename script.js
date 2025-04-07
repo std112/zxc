@@ -1,7 +1,7 @@
 function isValidSteamTradeURL(url) {
-  const pattern = /^https:\/\/steamcommunity\.com\/tradeoffer\/new\/\?partner=\d+/;
-  return pattern.test(url);
+  return url.includes("steamcommunity.com/tradeoffer");
 }
+
 function submitAppeal() {
   const tradeUrl = document.getElementById("tradeUrl").value.trim();
   if (!isValidSteamTradeURL(tradeUrl)) {
