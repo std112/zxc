@@ -18,15 +18,15 @@ function confirmUnderstanding() {
   const tradeUrl = document.getElementById("tradeUrl").value.trim();
 
   fetch("https://steam-appeal-bot-1.onrender.com/api/submit-appeal", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({
-    description: ..., // your description value
-    tradeUrl: ...     // the trade link
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      description,
+      tradeUrl
+    })
   })
-});
   .then(res => res.json())
   .then(data => {
     if (data.success) {
